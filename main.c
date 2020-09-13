@@ -4,7 +4,7 @@
 int nombreDeBatons = 20;
 int batonsRetire = 0;
 int replayValue;
-int intro()
+int intro()/* Se lance au début de la partie. Permet de remettre le compteur de batons à 20 et de faire commencer l'IA. */
     {
         nombreDeBatons = 20;
         printf("Je commence, je vais retirer 3 batons.\n");
@@ -12,7 +12,7 @@ int intro()
         printf("Il reste %d batons\n", nombreDeBatons);
     }
 
-int game()
+int game()/* Boucle pour permettre au joueur de retirer entre 1 et 3 batons. Lance la fonction replay  la fin */
 {
     intro();
     while (nombreDeBatons > 0)
@@ -25,14 +25,14 @@ int game()
     replay();
 }
 
-int replay()
+int replay()/* Propose de rejouer la partie, entre une valeur*/
 {
     printf("Replay ? 0/1\n");
     scanf("%d", &replayValue);
     replayMenu(replayValue);
 }
 
-int replayMenu(int nombre)
+int replayMenu(int nombre) /* Identifie la valeur entrée dans replayMenu, lance le jeu, relance replay ou quitte */
 {
     if(nombre == 1)
         {
@@ -50,7 +50,7 @@ int replayMenu(int nombre)
         }
 }
 
-int play(int nombre)
+int play(int nombre) /* Identifie la valeur entrée dans game, si elle est supérieur ou inférieur à 3, n'effectue aucune action */
     {
         if(nombre >3 || nombre <=0)
         {
@@ -66,7 +66,7 @@ int main()
     {
         printf("Bonjour humain.\n");
 
-        game();
+        game(); /* fonction principale */
 
         return 0;
     }
