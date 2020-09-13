@@ -59,6 +59,9 @@ int play(int nombre) /* Identifie la valeur entrée dans game, si elle est supéri
         else
         {
             nombreDeBatons = nombreDeBatons - nombre;
+            batonsRetire = 4 - nombre;
+            nombreDeBatons = nombreDeBatons - batonsRetire;
+            printf("Je vais retirer %d batons\n", batonsRetire);
         }
     }
 
