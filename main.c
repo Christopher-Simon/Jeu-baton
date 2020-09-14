@@ -3,7 +3,6 @@
 
 int nombreDeBatons = 20;
 int batonsRetire = 0;
-int replayValue;
 int menuValue;
 int currentPlayer = 1;
 char player1[100];
@@ -11,6 +10,7 @@ char player2[100];
 // Variable pour replay or not
 char oui[]="oui";
 char non[]="non";
+char replayValue[];
 int choix;
 
 int menu()/*Adding a menu to choose to play against a friend or AI*/
@@ -32,7 +32,7 @@ int menuFct(int nombre)/* Identifying the menuValue, for single or multiplayer *
                 printf("Tu vas prendre ta raclée!\n\n");
                 game();
             }
-            else if(nombre == 0)
+            else if(nombre == 2)
             {
                 printf("Asobo !\n");
                 multiplayer();
@@ -184,28 +184,21 @@ int playMultiValue(int nombre) /* Identifie la valeur entrée dans game, si elle
 
 int replayMulti()
     {
-        printf("Replay ? 0/1\n");
-        scanf("%d", &replayValue);
-        replayMultiFct(replayValue);
-    }
-
-int replayMultiFct(int nombre) /* Identifie la valeur entrée dans replayMenu, lance le jeu, relance replay ou quitte */
-{
-    if(nombre == 1)
-        {
+        printf("Voulez-vous refaire une partie ?\n");
+        scanf("%s", &replayValue);
+        choix = strcmp(replayValue, oui);
+        if (strcmp (replayValue,oui) == 0){
             printf("Okay let's go !\n");
             multiplayer();
         }
-        else if(nombre == 0)
-        {
+        else if (strcmp (replayValue,non) == 0){
             printf("Merci d'avoir joue !\n");
         }
-        else
-        {
-            printf("Veuillez selectionner 0/1\n");
+        else {
+            printf("Ceci n'est pas une réponse valide\n");
             replayMulti();
         }
-}
+    }
 
 int main()
     {
