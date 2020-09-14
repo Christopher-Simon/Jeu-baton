@@ -16,7 +16,7 @@ int choix;
 
 int menu()/*Adding a menu to choose to play against a friend or AI*/
     {
-        printf("\n\n*********************************************\n");
+        printf("\n*********************************************\n");
         printf("1) Jouer contre the unbeatable Bot\n");
         printf("2) Jouer avec un ami\n");
         printf("3) Lire les règles du jeux\n");
@@ -35,7 +35,7 @@ int menuFct(int nombre)/* Identifying the menuValue, for single or multiplayer *
                 game();
         }
         else if(nombre == 2){
-            printf("Asobo !\n");
+            printf("****** ASOBO ******\n\n");
             multiplayer();
         }
         else if(nombre == 3){
@@ -46,7 +46,7 @@ int menuFct(int nombre)/* Identifying the menuValue, for single or multiplayer *
         }
         else
         {
-            printf("Veuillez selectionner 0/1\n");
+            printf("Veuillez selectionner une option valide\n");
             menu();
         }
     }
@@ -76,17 +76,17 @@ int play(int nombre) /* Identifie la valeur entrée dans game, si elle est supé
     {
         if(nombre >3 || nombre <=0)
         {
-            printf("Vous ne pouvez retirer qu'entre 1 et 3 batons\n");
+            printf("Vous ne pouvez retirer qu'entre 1 et 3 batons\n\n");
         }
         else
         {
             nombreDeBatons = nombreDeBatons - nombre;
             if (nombreDeBatons == 0){
-                printf("Tu as retirer le dernier baton\n");
+                printf("\nTu as retirer le dernier baton\n");
                 printf("********* GAME OVER *********\n");
             }
             else if (nombreDeBatons <= 0){
-                printf("Tu as essayé d'en retirer trop, you still loose\n");
+                printf("\nTu as essayé d'en retirer trop, you still loose\n");
                 printf("********* GAME OVER *********\n\n");
             }
             else{
@@ -100,7 +100,7 @@ int play(int nombre) /* Identifie la valeur entrée dans game, si elle est supé
 
 int replayAI()/* Propose de rejouer la partie, entre une valeur*/
     {
-        printf("Voulez-vous refaire une partie ?\n");
+        printf("Voulez-vous refaire une partie ? (oui/non) :\n");
         scanf("%s", &replayValue);
         choix = strcmp(replayValue, oui);
         if (strcmp (replayValue,oui) == 0){
@@ -119,11 +119,12 @@ int replayAI()/* Propose de rejouer la partie, entre une valeur*/
 int multiplayer()
     {
         nombreDeBatons = 20;
-        printf("Nom du joueur 1\n");
+        printf("Nom du joueur 1 : ");
         scanf("%s", player1);
 
-        printf("Nom du joueur 2\n");
+        printf("Nom du joueur 2 : ");
         scanf("%s", player2);
+        printf("La partie commence avec 20 batons\n");
 
         while (nombreDeBatons > 0)
             {
@@ -140,11 +141,11 @@ int multiplayer()
                     {
                         if(currentPlayer == 1)
                         {
-                            printf("%s a perdu\n\n", player1);
+                            printf("****** %s a perdu ******\n\n", player1);
                         }
                         else
                         {
-                            printf("%s a perdu\n\n", player2);
+                            printf("****** %s a perdu ******\n\n", player2);
                         }
                     }
             }
@@ -165,11 +166,13 @@ int currentPlayerValue()
     {
         if(currentPlayer == 1)
             {
-                printf("C'est a %s de jouer", player1);
+                printf("\nC'est a %s de jouer\n", player1);
+                printf("Nombre de batons à retirer : ");
             }
         else
             {
-                printf("C'est a %s de jouer", player2);
+                printf("\nC'est a %s de jouer\n", player2);
+                printf("Nombre de batons à retirer : ");
             }
     }
 
@@ -178,7 +181,12 @@ int playMulti()
         currentPlayerValue();
         scanf("%d", &batonsRetire);
         playMultiValue(batonsRetire);
+        if (nombreDeBatons >= 0){
         printf("Il reste %d batons\n", nombreDeBatons);
+        }
+        else{
+        printf("Bien essayé, tu as voulu en retirer trop. Il reste 0 batons\n", nombreDeBatons);   
+        }
     }
 
 int playMultiValue(int nombre) /* Identifie la valeur entrée dans game, si elle est supérieur ou inférieur à 3, n'effectue aucune action */
@@ -196,7 +204,7 @@ int playMultiValue(int nombre) /* Identifie la valeur entrée dans game, si elle
 
 int replayMulti()
     {
-        printf("Voulez-vous refaire une partie ?\n");
+        printf("Voulez-vous refaire une partie ? (oui/non) :");
         scanf("%s", &replayValue);
         choix = strcmp(replayValue, oui);
         if (strcmp (replayValue,oui) == 0){
@@ -213,7 +221,7 @@ int replayMulti()
     }
 
 int RdJ (){
-    printf("\n\n==========================REGLES DU JEU==========================\n");
+    printf("\n==========================REGLES DU JEU==========================\n");
     printf("20 bâtonnets en bois sont alignés les uns à côté des autres\n");
     printf("A tour de rôle chacun des 2 concurrents va devoir en retirer\n");
     printf("1, 2 ou 3 à l'endroit de leur choix, le but étant de laisser\n");
@@ -230,6 +238,7 @@ int RdJ (){
 int main()
     {
         printf("Bonjour humain.\n");
+        printf("Bienvenue dans le jeu des batons. Que veux-tu faire ?\n");
         menu();
         return 0;
     }
