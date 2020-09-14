@@ -98,6 +98,7 @@ int replayAIFct(int nombre) /* Identifie la valeur entrée dans replayMenu, lance
 
 int multiplayer()
     {
+        nombreDeBatons = 20;
         printf("Nom du joueur 1\n");
         scanf("%s", player1);
 
@@ -127,7 +128,7 @@ int multiplayer()
                         }
                     }
             }
-
+        replayMulti();
     }
 
 int currentPlayerPlus()
@@ -172,6 +173,31 @@ int playMultiValue(int nombre) /* Identifie la valeur entrée dans game, si elle 
             nombreDeBatons = nombreDeBatons - nombre;
         }
     }
+
+int replayMulti()
+    {
+        printf("Replay ? 0/1\n");
+        scanf("%d", &replayValue);
+        replayMultiFct(replayValue);
+    }
+
+int replayMultiFct(int nombre) /* Identifie la valeur entrée dans replayMenu, lance le jeu, relance replay ou quitte */
+{
+    if(nombre == 1)
+        {
+            printf("Okay let's go !\n");
+            multiplayer();
+        }
+        else if(nombre == 0)
+        {
+            printf("Merci d'avoir joue !\n");
+        }
+        else
+        {
+            printf("Veuillez selectionner 0/1\n");
+            replayMulti();
+        }
+}
 
 int main()
     {
