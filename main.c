@@ -60,7 +60,7 @@ int game()/* Boucle pour permettre au joueur de retirer entre 1 et 3 batons. Lan
 int intro()/* Se lance au début de la partie. Permet de remettre le compteur de batons à 20 et de faire commencer l'IA. */
     {
         nombreDeBatons = 20;
-        printf("Nous commençons avec %d batons\n", nombreDeBatons);
+        printf("Nous commencons avec %d batons\n", nombreDeBatons);
         printf("Je commence par retirer 3 batons.\n\n");
         nombreDeBatons = nombreDeBatons - 3;
     }
@@ -88,7 +88,7 @@ int play(int nombre) /* Identifie la valeur entrée dans game, si elle est supé
 
 int replayAI()/* Propose de rejouer la partie, entre une valeur*/
     {
-        printf("Voulez-vous refaire une partie ?\n");
+        printf("Voulez-vous refaire une partie ? oui/non\n");
         scanf("%s", &replayValue);
         choix = strcmp(replayValue, oui);
         if (strcmp (replayValue,oui) == 0){
@@ -99,8 +99,8 @@ int replayAI()/* Propose de rejouer la partie, entre une valeur*/
             printf("Merci d'avoir joue !\n");
         }
         else {
-            printf("Ceci n'est pas une réponse valide\n");
-            main();
+            printf("Ceci n'est pas une reponse valide\n");
+            replayAI();
         }
     }
 
