@@ -8,10 +8,19 @@ int menuValue;
 int currentPlayer = 1;
 char player1[100];
 char player2[100];
+// Variable pour replay or not
+char oui[]="oui";
+char non[]="non";
+int choix;
 
 int menu()/*Adding a menu to choose to play against a friend or AI*/
     {
-        printf("Souhaitez-vous jouer contre l'IA ou a deux ? 0/1\n");
+        printf("*********************************************\n");
+        printf("1) Jouer contre the unbeatable Bot\n");
+        printf("2) Jouer avec un ami\n");
+        printf("3) Lire les rÃ¨gles du jeux\n");
+        printf("4) Quittez le jeu \n");
+        printf("*********************************************\n");
         scanf("%d", &menuValue);
         menuFct(menuValue);
     }
@@ -20,7 +29,7 @@ int menuFct(int nombre)/* Identifying the menuValue, for single or multiplayer *
     {
         if(nombre == 1)
             {
-                printf("Tu vas prendre ta raclée!\n");
+                printf("Tu vas prendre ta raclÃ©e!\n\n");
                 game();
             }
             else if(nombre == 0)
@@ -40,23 +49,23 @@ int game()/* Boucle pour permettre au joueur de retirer entre 1 et 3 batons. Lan
         intro();
         while (nombreDeBatons > 0)
             {
-                printf("Combien de batons voulez vous retirer ? Retirez entre 1 et 3\n");
+                printf("Il reste %d batons\n", nombreDeBatons);
+                printf("Combien de batons voulez vous retirer ? Retirez entre 1 et 3 : ");
                 scanf("%d", &batonsRetire);
                 play(batonsRetire);
-                printf("Il reste %d batons\n", nombreDeBatons);
             }
         replayAI();
     }
 
-int intro()/* Se lance au début de la partie. Permet de remettre le compteur de batons à 20 et de faire commencer l'IA. */
+int intro()/* Se lance au dÃ©but de la partie. Permet de remettre le compteur de batons Ã  20 et de faire commencer l'IA. */
     {
         nombreDeBatons = 20;
-        printf("Je commence, je vais retirer 3 batons.\n");
+        printf("Nous commenÃ§ons avec %d batons\n", nombreDeBatons);
+        printf("Je commence par retirer 3 batons.\n\n");
         nombreDeBatons = nombreDeBatons - 3;
-        printf("Il reste %d batons\n", nombreDeBatons);
     }
 
-int play(int nombre) /* Identifie la valeur entrée dans game, si elle est supérieur ou inférieur à 3, n'effectue aucune action */
+int play(int nombre) /* Identifie la valeur entrÃ©e dans game, si elle est supÃ©rieur ou infÃ©rieur Ã  3, n'effectue aucune action */
     {
         if(nombre >3 || nombre <=0)
         {
@@ -65,36 +74,35 @@ int play(int nombre) /* Identifie la valeur entrée dans game, si elle est supéri
         else
         {
             nombreDeBatons = nombreDeBatons - nombre;
+            printf("Il reste %d batons\n", nombreDeBatons);
             batonsRetire = 4 - nombre;
-            nombreDeBatons = nombreDeBatons - batonsRetire;
-            printf("Je vais retirer %d batons\n", batonsRetire);
+            if (nombreDeBatons == 0){
+                printf("Tu as perdu, you looser\n");
+            }
+            else{
+                nombreDeBatons = nombreDeBatons - batonsRetire;
+                printf("Je vais retirer %d batons\n\n", batonsRetire);
+            }
         }
     }
 
 int replayAI()/* Propose de rejouer la partie, entre une valeur*/
-{
-    printf("Replay ? 0/1\n");
-    scanf("%d", &replayValue);
-    replayAIFct(replayValue);
-}
-
-int replayAIFct(int nombre) /* Identifie la valeur entrée dans replayMenu, lance le jeu, relance replay ou quitte */
-{
-    if(nombre == 1)
-        {
+    {
+        printf("Voulez-vous refaire une partie ?\n");
+        scanf("%s", &replayValue);
+        choix = strcmp(replayValue, oui);
+        if (strcmp (replayValue,oui) == 0){
             printf("Okay let's go !\n");
             game();
         }
-        else if(nombre == 0)
-        {
+        else if (strcmp (replayValue,non) == 0){
             printf("Merci d'avoir joue !\n");
         }
-        else
-        {
-            printf("Veuillez selectionner 0/1\n");
-            replayAI();
+        else {
+            printf("Ceci n'est pas une rÃ©ponse valide\n");
+            main();
         }
-}
+    }
 
 int multiplayer()
     {
@@ -161,7 +169,7 @@ int playMulti()
         printf("Il reste %d batons\n", nombreDeBatons);
     }
 
-int playMultiValue(int nombre) /* Identifie la valeur entrée dans game, si elle est supérieur ou inférieur à 3, n'effectue aucune action */
+int playMultiValue(int nombre) /* Identifie la valeur entrÃ©e dans game, si elle est supÃ©rieur ou infÃ©rieur Ã  3, n'effectue aucune action */
     {
         if(nombre >3 || nombre <=0)
         {
@@ -181,7 +189,7 @@ int replayMulti()
         replayMultiFct(replayValue);
     }
 
-int replayMultiFct(int nombre) /* Identifie la valeur entrée dans replayMenu, lance le jeu, relance replay ou quitte */
+int replayMultiFct(int nombre) /* Identifie la valeur entrÃ©e dans replayMenu, lance le jeu, relance replay ou quitte */
 {
     if(nombre == 1)
         {
