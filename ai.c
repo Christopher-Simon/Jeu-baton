@@ -67,7 +67,7 @@ void replayAI() /* Propose de rejouer la partie, entre une valeur*/
         printf("Okay let's go !\n");
         game();
     }
-    else if (strcmp (replayValue,non) == 0){
+    else if (strcmp (replayValue,oui) == 1){
         menu();
     }
     else {
