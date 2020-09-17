@@ -1,5 +1,23 @@
 # depslib dependency file v1.0
-1600077773 source:c:\users\christopher\projects\c\function test\function test\main.c
+1600333770 source:c:\users\christopher\projects\c\function test\function test\main.c
 	<stdio.h>
 	<stdlib.h>
+	"ai.h"
+	"menu.h"
+	"rules.h"
+
+1600282583 source:c:\users\christopher\projects\c\function test\function test\ai.c
+	"ai.h"
+
+1600282544 c:\users\christopher\projects\c\function test\function test\ai.h
+
+1600282547 c:\users\christopher\projects\c\function test\function test\menu.h
+
+1600282763 c:\users\christopher\projects\c\function test\function test\rules.h
+
+1600333023 source:c:\users\christopher\projects\c\function test\function test\menu.c
+	"menu.h"
+
+1600282945 source:c:\users\christopher\projects\c\function test\function test\rules.c
+	"rules.h"
 
