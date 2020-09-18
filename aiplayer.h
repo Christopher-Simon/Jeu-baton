@@ -1,0 +1,6 @@
+#ifndef AIPLAYER_H_INCLUDED
+#define AIPLAYER_H_INCLUDED
+
+int hello();
+
+#endif // AIPLAYER_H_INCLUDED

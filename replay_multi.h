@@ -1,0 +1,6 @@
+#ifndef REPLAY_MULTI_H_INCLUDED
+#define REPLAY_MULTI_H_INCLUDED
+
+int replayMulti();
+
+#endif // REPLAY_MULTI_H_INCLUDED
