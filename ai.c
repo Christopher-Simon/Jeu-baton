@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "ai.h"
 
 int game() /* Boucle pour permettre au joueur de retirer entre 1 et 3 batons. Lance la fonction replay  la fin */
@@ -70,18 +68,14 @@ int play(int nombreRetire, int nombre) /* Identifie la valeur entrée dans game, 
 
 void replayAI() /* Propose de rejouer la partie, entre une valeur*/
 {
-    char oui[]="oui";
-    char non[]="non";
     char replayValue[3];
-    int choix;
     printf("Voulez-vous refaire une partie ? (oui/non) :\n");
     scanf("%s", &replayValue);
-    choix = strcmp(replayValue, oui);
-    if (strcmp (replayValue,oui) == 0){
+    if (strcmp (replayValue,"oui") == 0){
         printf("Okay let's go !\n");
         game();
     }
-    else if (strcmp (replayValue,oui) == 1){
+    else if (strcmp (replayValue,"non") == 0){
         menu();
     }
     else {
