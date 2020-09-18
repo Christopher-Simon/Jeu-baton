@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ai.h" />
+		<Unit filename="aiplayer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="aiplayer.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -42,6 +46,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="menu.h" />
+		<Unit filename="multi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="multi.h" />
+		<Unit filename="replay_multi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="replay_multi.h" />
 		<Unit filename="rules.c">
 			<Option compilerVar="CC" />
 		</Unit>
