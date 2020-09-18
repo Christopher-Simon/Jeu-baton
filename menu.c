@@ -6,7 +6,7 @@ void menu()/*Adding a menu to choose to play against a friend or AI*/
         printf("\n*********************************************\n");
         printf("1) Jouer contre the unbeatable Bot\n");
         printf("2) Jouer avec un ami\n");
-        printf("3) Lire les règles du jeux\n");
+        printf("3) Lire les regles du jeux\n");
         printf("4) Quittez le jeu \n");
         printf("*********************************************\n\n");
         printf("Votre choix :");

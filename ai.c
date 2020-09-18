@@ -12,7 +12,7 @@ int game() /* Boucle pour permettre au joueur de retirer entre 1 et 3 batons. La
 
             while (batonsRetire == 0)
             {
-                printf("Combien de batons voulez vous retirer ? Retirez entre 1 et 3 : ");
+                printf("Combien de batons souhaites tu retirer ? Entre 1 et 3 uniquement: ");
                 if (!fgets(buf, 1024, stdin))
                 {
                     // reading input failed, give up:
@@ -23,7 +23,7 @@ int game() /* Boucle pour permettre au joueur de retirer entre 1 et 3 batons. La
                 batonsRetire = atoi(buf);
             }
 
-            printf("Tu veux en retirer %d ?", batonsRetire);
+            printf("Tu veux en retirer %d ?\n", batonsRetire);
 
             nombreDeBatons = play(batonsRetire, nombreDeBatons);
         }
