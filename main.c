@@ -3,6 +3,7 @@
 #include "ai.h"
 #include "menu.h"
 #include "rules.h"
+<<<<<<< HEAD
 
 
 
@@ -134,3 +135,15 @@ int main()
     menu();
     return 0;
 }
+=======
+#include "multi.h"
+#include "replay_multi.h"
+
+int main()
+{
+    printf("Bonjour humain.\n");
+    printf("Bienvenue dans le jeu des batons. Que veux-tu faire ?\n");
+    menu();
+    return 0;
+}
+>>>>>>> c7d0ea392dd5c5ebc0546ce9892af1f43023f08a
