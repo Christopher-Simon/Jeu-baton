@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 240 <<<<<<< HEAD
 
-1600421045 source:c:\users\christopher\projects\c\function test\function test\main.c
+1600434593 source:c:\users\christopher\projects\c\function test\function test\main.c
 	<stdio.h>
 	<stdlib.h>
 	"ai.h"
@@ -19,7 +19,9 @@
 
 1600416887 D
 
-1600421025 source:c:\users\christopher\projects\c\function test\function test\ai.c
+1600435037 source:c:\users\christopher\projects\c\function test\function test\ai.c
+	<stdio.h>
+	<stdlib.h>
 	"ai.h"
 
 1600420926 c:\users\christopher\projects\c\function test\function test\ai.h
@@ -28,8 +30,7 @@
 
 1600420926 c:\users\christopher\projects\c\function test\function test\rules.h
 
-1600416981 source:c:\users\christopher\projects\c\function test\function test\menu.c
-	"menu.h"
+1600421085 source:c:\users\christopher\projects\c\function test\function test\menu.c
 	"menu.h"
 
 1600420926 source:c:\users\christopher\projects\c\function test\function test\rules.c
@@ -39,10 +40,12 @@
 	"multi.h"
 	"replay_multi.h"
 
-1600419522 source:c:\users\christopher\projects\c\function test\function test\multi.c
+1600435392 source:c:\users\christopher\projects\c\function test\function test\multi.c
+	<stdio.h>
+	<stdlib.h>
 	"multi.h"
 
-1600419522 c:\users\christopher\projects\c\function test\function test\multi.h
+1600435225 c:\users\christopher\projects\c\function test\function test\multi.h
 
 1600369581 source:c:\users\christopher\projects\c\function test\function test\multi brouillon.c
 

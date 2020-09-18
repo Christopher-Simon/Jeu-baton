@@ -1,9 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "multi.h"
 
 int multiplayer()
 {
     int nombreDeBatons = 20;
-    int batonsRetire = 0;
     char player1[100];
     char player2[100];
 
@@ -13,20 +14,32 @@ int multiplayer()
     printf("Nom du joueur 2 : ");
     scanf("%s", player2);
 
-    play_multi(nombreDeBatons, batonsRetire, player1, player2);
+    play_multi(nombreDeBatons, player1, player2);
 }
 
-int play_multi(nombreDeBatons, batonsRetire, player1, player2)
+int play_multi(nombreDeBatons, player1, player2)
 {
     int currentPlayer = 1;
-
+    char buf[1024];
     while (nombreDeBatons > 0)
     {
+        int batonsRetire = 0;
         currentPlayerValue(currentPlayer, player1, player2);
 
-        printf("Nombre de batons a retirer : ");
-        scanf("%d", &batonsRetire);
-        printf("2currentPlayer = %d\n", currentPlayer);
+        while (batonsRetire == 0)
+        {
+            printf("Nombre de batons a retirer : ");
+            if (!fgets(buf, 1024, stdin))
+            {
+                // reading input failed, give up:
+                return 1;
+            }
+
+            // have some input, convert it to integer:
+            batonsRetire = atoi(buf);
+        }
+
+        printf("Tu veux en retirer %d\n", batonsRetire);
         nombreDeBatons = playMultiValue(batonsRetire, nombreDeBatons, &currentPlayer,player1, player2);
 
         printf("%d\n", nombreDeBatons);
@@ -38,12 +51,10 @@ int currentPlayerValue(currentPlayer, player1, player2)
     if(currentPlayer == 1)
         {
             printf("\nC'est a %s de jouer\n", player1);
-            printf("1currentPlayer = %d\n", currentPlayer);
         }
     else
         {
             printf("\nC'est a %s de jouer\n", player2);
-            printf("1currentPlayer = %d\n", currentPlayer);
         }
 }
 

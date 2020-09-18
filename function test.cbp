@@ -35,10 +35,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ai.h" />
-		<Unit filename="aiplayer.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="aiplayer.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

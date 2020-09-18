@@ -1,15 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "ai.h"
 
 int game() /* Boucle pour permettre au joueur de retirer entre 1 et 3 batons. Lance la fonction replay  la fin */
 {
     int nombreDeBatons = 20;
-    int batonsRetire = 0;
+    char buf[1024];
     nombreDeBatons = intro(nombreDeBatons);
     while (nombreDeBatons > 0)
         {
+            int batonsRetire = 0;
             printf("Il reste %d batons\n", nombreDeBatons);
-            printf("Combien de batons voulez vous retirer ? Retirez entre 1 et 3 : ");
-            scanf("%d", &batonsRetire);
+
+            while (batonsRetire == 0)
+            {
+                printf("Combien de batons voulez vous retirer ? Retirez entre 1 et 3 : ");
+                if (!fgets(buf, 1024, stdin))
+                {
+                    // reading input failed, give up:
+                    return 1;
+                }
+
+                // have some input, convert it to integer:
+                batonsRetire = atoi(buf);
+            }
+
+            printf("Tu veux en retirer %d ?", batonsRetire);
+
             nombreDeBatons = play(batonsRetire, nombreDeBatons);
         }
     replayAI();
