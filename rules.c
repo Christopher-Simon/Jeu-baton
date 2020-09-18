@@ -1,6 +1,7 @@
 #include "rules.h"
 
-int RdJ (){
+int RdJ ()
+{
     int RetourMenu;
 
     printf("\n==========================REGLES DU JEU==========================\n");

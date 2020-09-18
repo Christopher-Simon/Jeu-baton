@@ -4,13 +4,13 @@
 #include "menu.h"
 #include "rules.h"
 #include "multi.h"
-
+#include "replay_multi.h"
 
 
 int main()
-    {
-        printf("Bonjour humain.\n");
-        printf("Bienvenue dans le jeu des batons. Que veux-tu faire ?\n");
-        menu();
-        return 0;
-    }
+{
+    printf("Bonjour humain.\n");
+    printf("Bienvenue dans le jeu des batons. Que veux-tu faire ?\n");
+    menu();
+    return 0;
+}
