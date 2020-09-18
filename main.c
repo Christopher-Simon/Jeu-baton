@@ -6,7 +6,6 @@
 #include "multi.h"
 #include "replay_multi.h"
 
-
 int main()
 {
     printf("Bonjour humain.\n");
