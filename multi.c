@@ -17,7 +17,6 @@ int multiplayer()
 int launch_multi(player1, player2)
 {
     int nombreDeBatons = 20;
-    printf("nombre de batons : %d\n", nombreDeBatons);
     int currentPlayer = rand_player();
     play_multi(nombreDeBatons, currentPlayer, player1, player2);
 }
@@ -27,22 +26,18 @@ int rand_player()
     int number;
     srand(time(NULL));
     number = (rand() % (2 - 1 + 1)) + 1;
-    printf("rand is :%d\n", number);
     return number;
 }
 
 int play_multi(nombreDeBatons, currentPlayer, player1, player2)
 {
     char buf[1024];
-    printf("nombre de batons : %d\n", nombreDeBatons);
-    printf("%d\n", currentPlayer);
     while (nombreDeBatons > 0)
     {
         //printf("debut boucle while nbbatons >0\n");
         int batonsRetire = 0;
         //printf("après int batons retire\n");
         currentPlayerValue(currentPlayer, player1, player2);
-        printf("après currenplayervalue\n");
         while (batonsRetire == 0)
         {
             printf("Nombre de batons a retirer : ");
@@ -65,7 +60,6 @@ int play_multi(nombreDeBatons, currentPlayer, player1, player2)
 
 void currentPlayerValue(currentPlayer, player1, player2)
 {
-    printf("current player is %d\n", currentPlayer);
     if(currentPlayer == 1)
         {
             printf("\nC'est a %s de jouer\n", player1);
@@ -74,7 +68,6 @@ void currentPlayerValue(currentPlayer, player1, player2)
         {
             printf("\nC'est a %s de jouer\n", player2);
         }
-    printf("End Current player value\n");
 }
 
 int playMultiValue(int batonsRetire,int nombreDeBatons,int* a,int player1,int player2) /* Identifie la valeur entrée dans game, si elle est supérieur ou inférieur à 3, n'effectue aucune action */
@@ -99,7 +92,7 @@ int playMultiValue(int batonsRetire,int nombreDeBatons,int* a,int player1,int pl
             {
                 printf("****** %s a perdu ******\n\n", player1);
             }
-            replayMulti();
+            replayMulti(player1, player2);
         }
         else
         {
