@@ -1,10 +1,23 @@
 #include "ai.h"
 
-int game() /* Boucle pour permettre au joueur de retirer entre 1 et 3 batons. Lance la fonction replay  la fin */
+int launch()
+{
+    int nbround = 0;
+    game(nbround);
+
+}
+
+int game(nbround) /* Boucle pour permettre au joueur de retirer entre 1 et 3 batons. Lance la fonction replay  la fin */
 {
     int nombreDeBatons = 20;
     char buf[1024];
+
+    nbround++;
+    round_message(nbround);
+    //printf("Round %d\n", nbround);
+
     nombreDeBatons = intro(nombreDeBatons);
+
     while (nombreDeBatons > 0)
         {
             int batonsRetire = 0;
@@ -27,7 +40,19 @@ int game() /* Boucle pour permettre au joueur de retirer entre 1 et 3 batons. La
 
             nombreDeBatons = play(batonsRetire, nombreDeBatons);
         }
-    replayAI();
+    replayAI(nbround);
+}
+
+int round_message(nbround)
+{
+    if(nbround == 2)
+    {
+        printf("\nAller, montre moi ce que tu as dans le ventre\n");
+    }
+    if(nbround == 3)
+    {
+        printf("\n C'est pas commme ça que tu vas réussir à me vaincre\n");
+    }
 }
 
 int intro(int nombre) /* Se lance au début de la partie. Permet de remettre le compteur de batons à 20 et de faire commencer l'IA. */
@@ -41,6 +66,7 @@ int intro(int nombre) /* Se lance au début de la partie. Permet de remettre le c
 int play(int nombreRetire, int nombre) /* Identifie la valeur entrée dans game, si elle est supérieur ou inférieur à 3, n'effectue aucune action */
 {
     int resultat;
+
     if(nombreRetire >3 || nombreRetire <=0)
     {
         printf("Tu ne peux retirer qu'entre 1 et 3 batons\n\n");
@@ -66,14 +92,14 @@ int play(int nombreRetire, int nombre) /* Identifie la valeur entrée dans game, 
     return resultat = nombre;
 }
 
-void replayAI() /* Propose de rejouer la partie, entre une valeur*/
+void replayAI(nbround) /* Propose de rejouer la partie, entre une valeur*/
 {
     char replayValue[3];
     printf("Voulez-vous refaire une partie ? (oui/non) :\n");
     scanf("%s", &replayValue);
     if (strcmp (replayValue,"oui") == 0){
         printf("Okay let's go !\n");
-        game();
+        game(nbround);
     }
     else if (strcmp (replayValue,"non") == 0){
         menu();

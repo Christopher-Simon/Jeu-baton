@@ -19,7 +19,7 @@ int menuFct(int nombre)/* Identifying the menuValue, for single or multiplayer *
 {
     if(nombre == 1){
             printf("Tu vas prendre ta raclee!\n\n");
-            game();
+            launch();
     }
     else if(nombre == 2){
         printf("****** ASOBO ******\n\n");

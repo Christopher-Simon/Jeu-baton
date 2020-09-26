@@ -8,7 +8,7 @@ int replayMulti()
     printf("replayValue = %s\n", replayValue);
     if (strcmp (replayValue,"oui") == 0){
         printf("Okay let's go !\n");
-        multiplayer();
+        launch_multi();
     }
     else if (strcmp (replayValue,"non") == 0){
         menu();
