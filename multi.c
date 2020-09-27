@@ -85,11 +85,11 @@ int playMultiValue(int batonsRetire,int nombreDeBatons,int* currentPlayer,int pl
         {
             if(currentPlayer == 1)
             {
-                printf("****** %s a perdu ******\n\n", player2);
+                printf("****** %s a perdu ******\n\n", player1);
             }
             else
             {
-                printf("****** %s a perdu ******\n\n", player1);
+                printf("****** %s a perdu ******\n\n", player2);
             }
             replayMulti(player1, player2);
         }
