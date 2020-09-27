@@ -22,10 +22,10 @@ int game(nbround) /* Boucle pour permettre au joueur de retirer entre 1 et 3 bat
         {
             int batonsRetire = 0;
             printf("Il reste %d batons\n", nombreDeBatons);
+            printf("Combien de batons souhaites tu retirer ? Entre 1 et 3 uniquement: ");
 
             while (batonsRetire == 0)
             {
-                printf("Combien de batons souhaites tu retirer ? Entre 1 et 3 uniquement: ");
                 if (!fgets(buf, 1024, stdin))
                 {
                     // reading input failed, give up:
