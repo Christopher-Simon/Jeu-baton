@@ -1,6 +1,6 @@
 #include "replay_multi.h"
 
-int replayMulti()
+int replayMulti(player1, player2)
 {
     char replayValue[3];
     printf("Voulez-vous refaire une partie ? (oui/non) :");
@@ -8,7 +8,7 @@ int replayMulti()
     printf("replayValue = %s\n", replayValue);
     if (strcmp (replayValue,"oui") == 0){
         printf("Okay let's go !\n");
-        multiplayer();
+        launch_multi(player1, player2);
     }
     else if (strcmp (replayValue,"non") == 0){
         menu();
