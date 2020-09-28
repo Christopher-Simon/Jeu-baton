@@ -5,6 +5,8 @@ int multiplayer()
     char player1[100];
     char player2[100];
 
+    printf("****** ASOBO ******\n\n");
+
     printf("Nom du joueur 1 : ");
     scanf("%s", player1);
 
@@ -83,13 +85,16 @@ int playMultiValue(int batonsRetire,int nombreDeBatons,int* currentPlayer,int pl
         nombreDeBatons = nombreDeBatons - batonsRetire;
         if(nombreDeBatons <= 0)
         {
-            if(currentPlayer == 1)
+            printf("Current player is : %d \n", *currentPlayer);
+            if(*currentPlayer == 1)
             {
-                printf("****** %s a perdu ******\n\n", player1);
+                printf("****** %s a retire le dernier baton et perd ******\n", player1);
+                printf("****** Bravo %s ****** !\n\n", player2);
             }
             else
             {
-                printf("****** %s a perdu ******\n\n", player2);
+                printf("****** %s a perdu ******\n", player2);
+                printf("****** Bravo %s ****** !\n\n", player1);
             }
             replayMulti(player1, player2);
         }

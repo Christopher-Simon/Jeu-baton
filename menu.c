@@ -19,17 +19,19 @@ void menu()/*Adding a menu to choose to play against a friend or AI*/
 int menuFct(int nombre)/* Identifying the menuValue, for single or multiplayer */
 {
     if(nombre == 1){
-            printf("Tu vas prendre ta raclee!\n\n");
-            launch();
+        system("clear");
+        launch();
     }
     else if(nombre == 2){
-        printf("****** ASOBO ******\n\n");
+        system("clear");
         multiplayer();
     }
     else if(nombre == 3){
+        system("clear");
         RdJ();
     }
     else if(nombre == 4){
+        system("clear");
         Langues();
     }
     else if(nombre == 5){
@@ -49,5 +51,6 @@ int Langues()
     printf("Nan, en vrai on a pas eu le temps\n");
     printf("Entrez un input pour retourner au menu :");
     scanf("%s", &RetourMenu);
+    system("clear");
     menu();
 }

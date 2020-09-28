@@ -3,6 +3,7 @@
 int launch()
 {
     int nbround = 0;
+    printf("Tu vas prendre ta raclee!\n\n");
     game(nbround);
 
 }
@@ -99,9 +100,11 @@ void replayAI(nbround) /* Propose de rejouer la partie, entre une valeur*/
     scanf("%s", &replayValue);
     if (strcmp (replayValue,"oui") == 0){
         printf("Okay let's go !\n");
+        system("clear");
         game(nbround);
     }
     else if (strcmp (replayValue,"non") == 0){
+        system("clear");
         menu();
     }
     else {

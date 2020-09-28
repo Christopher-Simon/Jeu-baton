@@ -15,5 +15,6 @@ int RdJ ()
     printf("=================================================================\n\n");
     printf("Entrez un input pour retourner au menu :");
     scanf("%s", &RetourMenu);
+    system("clear");
     menu();
 }
