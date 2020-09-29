@@ -37,7 +37,7 @@ int game(nbround) /* Boucle pour permettre au joueur de retirer entre 1 et 3 bat
                 batonsRetire = atoi(buf);
             }
 
-            printf("Tu veux en retirer %d ?\n", batonsRetire);
+            printf("Tu veux en retirer %d ?\n\n", batonsRetire);
 
             nombreDeBatons = play(batonsRetire, nombreDeBatons);
         }
@@ -48,12 +48,29 @@ int round_message(nbround)
 {
     if(nbround == 2)
     {
-        printf("\nAller, montre moi ce que tu as dans le ventre\n");
+        printf("Aller, montre moi ce que tu as dans le ventre\n\n");
     }
     if(nbround == 3)
     {
-        printf("\n C'est pas commme ça que tu vas réussir à me vaincre\n");
+        printf("Jamais deux sans trois\n\n");
     }
+    if(nbround == 4)
+    {
+        printf("Tu commences a y prendre goût\n\n");
+    }
+    if(nbround == 5)
+    {
+        printf("Aller, celle la c'est la bonne\n\n");
+    }
+    if(nbround == 6)
+    {
+        printf("C'est pas commme ca que tu vas reussir à me vaincre\n\n");
+    }
+    if(nbround == 10)
+    {
+        printf("Tu peux recommencer, mais je triche donc tu ne peux pas gagner\n\n");
+    }
+
 }
 
 int intro(int nombre) /* Se lance au début de la partie. Permet de remettre le compteur de batons à 20 et de faire commencer l'IA. */
@@ -67,6 +84,12 @@ int intro(int nombre) /* Se lance au début de la partie. Permet de remettre le c
 int play(int nombreRetire, int nombre) /* Identifie la valeur entrée dans game, si elle est supérieur ou inférieur à 3, n'effectue aucune action */
 {
     int resultat;
+    if(nombreRetire == 42)
+    {
+        printf("C'est le sens de la vie, c'est vrai.\n");
+        printf("On arrete tout, mais ca ne veut pas dire que tu gagnes!\n");
+        main();
+    }
 
     if(nombreRetire >3 || nombreRetire <=0)
     {

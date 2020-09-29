@@ -53,7 +53,7 @@ int play_multi(nombreDeBatons, currentPlayer, player1, player2)
             batonsRetire = atoi( buf);
         }
 
-        printf("Tu veux en retirer %d\n", batonsRetire);
+        printf("Tu veux en retirer %d\n\n", batonsRetire);
         nombreDeBatons = playMultiValue(batonsRetire, nombreDeBatons, &currentPlayer, player1, player2);
 
         printf("Il reste %d batons\n", nombreDeBatons);
@@ -76,7 +76,7 @@ int playMultiValue(int batonsRetire,int nombreDeBatons,int* currentPlayer,int pl
 {
     if(batonsRetire >3 || batonsRetire <=0)
     {
-        printf("Vous ne pouvez retirer qu'entre 1 et 3 batons\n");
+        printf("Vous ne pouvez retirer qu'entre 1 et 3 batons\n\n");
         printf("Il reste %d\n", nombreDeBatons);
         play_multi(nombreDeBatons, *currentPlayer, player1, player2);
     }

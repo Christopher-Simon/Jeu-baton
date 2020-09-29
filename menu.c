@@ -49,6 +49,7 @@ int Langues()
     int RetourMenu;
 
     printf("Nan, en vrai on a pas eu le temps\n");
+    printf("    no hablo español\n");
     printf("Entrez un input pour retourner au menu :");
     scanf("%s", &RetourMenu);
     system("clear");
