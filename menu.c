@@ -3,6 +3,8 @@
 void menu()/*Adding a menu to choose to play against a friend or AI*/
     {
         int menuValue;
+        printf("Bonjour humain.\n");
+        printf("Bienvenue dans le jeu des batons. Que veux-tu faire ?\n\n");
         printf("\n*********************************************\n");
         printf("1) Jouer contre the unbeatable Bot\n");
         printf("2) Jouer avec un ami\n");

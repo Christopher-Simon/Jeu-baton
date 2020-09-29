@@ -15,7 +15,7 @@ int game(nbround) /* Boucle pour permettre au joueur de retirer entre 1 et 3 bat
 
     nbround++;
     round_message(nbround);
-    //printf("Round %d\n", nbround);
+    printf("Round %d\n", nbround);
 
     nombreDeBatons = intro(nombreDeBatons);
 
@@ -48,7 +48,16 @@ int round_message(nbround)
 {
     if(nbround == 2)
     {
-        printf("Aller, montre moi ce que tu as dans le ventre\n\n");
+        printf("Je suis content de voir que vous jetiez un coup d'oeil !\n\n");
+        printf("Et sans transition, je vous donne plus de details sur mes motivations et mon background.\n\n");
+        printf("Je suis diplome de l ecole de management de Grenoble. \n\n");
+        printf("J'ai multiplie les projets entrepreneuriaux:\n");
+        printf("La creation d un reseau social gaming (je travaillais avec des devs et une designer en y connaissant rien, pire idee).\n");
+        printf("Un outil de rencontre rh pour les grands groupes (pour lequel j'ai plonge dans le Ruby et qu'on a teste juste avant le confinement).\n");
+        printf("Du freelance pour aider dans le telemanagement (mais le service pur, ce n'est pas vraiment pour moi).\n\n");
+        printf("Je veux continuer a creer : apprendre techniquement et partager humainement.\n");
+        printf("Et je pense que 42 combine a la perfection ces deux mondes. \n\n");
+        printf("Vous pouvez reprendre votre partie !\n\n");
     }
     if(nbround == 3)
     {
@@ -132,6 +141,6 @@ void replayAI(nbround) /* Propose de rejouer la partie, entre une valeur*/
     }
     else {
         printf("Ceci n'est pas une reponse valide\n");
-        replayAI();
+        replayAI(nbround);
     }
 }
