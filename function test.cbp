@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ai.h" />
+		<Unit filename="langues.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="langues.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

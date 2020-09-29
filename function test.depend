@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
 240 <<<<<<< HEAD
 
-1600440250 source:c:\users\christopher\projects\c\function test\function test\main.c
+1601378441 source:c:\users\christopher\projects\c\function test\function test\main.c
 	<stdio.h>
 	<stdlib.h>
 	"ai.h"
 	"menu.h"
 	"rules.h"
+	"langues.h"
 	"multi.h"
 	"replay_multi.h"
 
@@ -19,7 +20,7 @@
 
 1600416887 D
 
-1601325396 source:c:\users\christopher\projects\c\function test\function test\ai.c
+1601371134 source:c:\users\christopher\projects\c\function test\function test\ai.c
 	"ai.h"
 
 1601325453 c:\users\christopher\projects\c\function test\function test\ai.h
@@ -30,7 +31,7 @@
 
 1600420926 c:\users\christopher\projects\c\function test\function test\rules.h
 
-1601325239 source:c:\users\christopher\projects\c\function test\function test\menu.c
+1601378465 source:c:\users\christopher\projects\c\function test\function test\menu.c
 	"menu.h"
 
 1601309640 source:c:\users\christopher\projects\c\function test\function test\rules.c
@@ -60,4 +61,9 @@
 	"aiplayer.h"
 
 1600419769 c:\users\christopher\projects\c\function test\function test\aiplayer.h
+
+1601378465 c:\users\christopher\projects\c\function test\function test\langues.h
+
+1601378481 source:c:\users\christopher\projects\c\function test\function test\langues.c
+	"langues.h"
 

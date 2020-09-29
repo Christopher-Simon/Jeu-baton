@@ -3,6 +3,7 @@
 #include "ai.h"
 #include "menu.h"
 #include "rules.h"
+#include "langues.h"
 #include "multi.h"
 #include "replay_multi.h"
 

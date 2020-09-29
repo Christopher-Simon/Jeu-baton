@@ -32,7 +32,7 @@ int menuFct(int nombre)/* Identifying the menuValue, for single or multiplayer *
     }
     else if(nombre == 4){
         system("clear");
-        Langues();
+        langues();
     }
     else if(nombre == 5){
         printf("\nMerci, au revoir Humain");
@@ -44,14 +44,3 @@ int menuFct(int nombre)/* Identifying the menuValue, for single or multiplayer *
     }
 }
 
-int Langues()
-{
-    int RetourMenu;
-
-    printf("Nan, en vrai on a pas eu le temps\n");
-    printf("    no hablo español\n");
-    printf("Entrez un input pour retourner au menu :");
-    scanf("%s", &RetourMenu);
-    system("clear");
-    menu();
-}
