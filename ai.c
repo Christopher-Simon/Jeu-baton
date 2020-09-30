@@ -65,7 +65,7 @@ int round_message(nbround)
     }
     if(nbround == 4)
     {
-        printf("Tu commences a y prendre goût\n\n");
+        printf("Tu commences a y prendre gout\n\n");
     }
     if(nbround == 5)
     {
