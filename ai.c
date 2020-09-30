@@ -97,6 +97,8 @@ int play(int nombreRetire, int nombre) /* Identifie la valeur entrée dans game, 
     {
         printf("C'est le sens de la vie, c'est vrai.\n");
         printf("On arrete tout, mais ca ne veut pas dire que tu gagnes!\n");
+        scanf("%d");
+        system("clear");
         main();
     }
 
