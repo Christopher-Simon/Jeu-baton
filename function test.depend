@@ -67,3 +67,47 @@
 1601392307 source:c:\users\christopher\projects\c\function test\function test\langues.c
 	"langues.h"
 
+1601458763 source:c:\users\christopher\projects\c\jeu-baton\ai.c
+	"ai.h"
+
+1601458763 c:\users\christopher\projects\c\jeu-baton\ai.h
+	<stdio.h>
+	<stdlib.h>
+
+1601458763 source:c:\users\christopher\projects\c\jeu-baton\langues.c
+	"langues.h"
+
+1601458763 c:\users\christopher\projects\c\jeu-baton\langues.h
+
+1601458763 source:c:\users\christopher\projects\c\jeu-baton\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ai.h"
+	"menu.h"
+	"rules.h"
+	"langues.h"
+	"multi.h"
+	"replay_multi.h"
+
+1601458763 c:\users\christopher\projects\c\jeu-baton\menu.h
+
+1601458763 c:\users\christopher\projects\c\jeu-baton\rules.h
+
+1601458763 c:\users\christopher\projects\c\jeu-baton\multi.h
+	<stdio.h>
+	<stdlib.h>
+
+1601458763 c:\users\christopher\projects\c\jeu-baton\replay_multi.h
+
+1601458763 source:c:\users\christopher\projects\c\jeu-baton\menu.c
+	"menu.h"
+
+1601458763 source:c:\users\christopher\projects\c\jeu-baton\multi.c
+	"multi.h"
+
+1601458763 source:c:\users\christopher\projects\c\jeu-baton\replay_multi.c
+	"replay_multi.h"
+
+1601458763 source:c:\users\christopher\projects\c\jeu-baton\rules.c
+	"rules.h"
+
